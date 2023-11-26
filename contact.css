@@ -1,0 +1,77 @@
+*, *:hover {
+    transition: all 0.3s ease-in-out; }
+  
+  /* body {
+    font-family: Lato, sans-serif;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    color: #5A5A5A; }
+  
+  .logo-title {
+    line-height: 40px;
+    padding: 0 5px; } */
+  
+  .nav-item.active {
+    border-bottom: 2px solid #204A87; }
+  
+  .navbar-brand {
+    padding: 0; }
+  .start{
+    padding-top: 40px;
+  }
+  .batn{
+    margin-top: 15px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 50px;
+    line-height: 50px; }
+  
+  .navbar-toggler {
+    border: none;
+    outline: none; }
+    .navbar-toggler:hover {
+      outline: none; }
+
+/* Style for dropdown menu */
+.dropdown-menu {
+  display: none;
+  position:absolute;
+  margin-left: 235px;
+  margin-top: -20px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.logoutbtn{
+  padding: 10px, 10px, 10px, 10px;
+  color: #cc923b;
+  
+}
+.logoutdiv{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top:5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  background-color: #ffcd8246;
+}

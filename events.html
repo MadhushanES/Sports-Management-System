@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+<style>
+.featurette-divider1{
+	border-width: 4px;
+	
+}
+
+.featurette-divider2{
+	border-width: 9px;
+	
+
+}
+
+
+</style>
+
+<script type="module"> 
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
+	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+	  
+      // TODO: Add SDKs for Firebase products that you want to use
+	  // https://firebase.google.com/docs/web/setup#available-libraries
+
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  const firebaseConfig = {
+        apiKey: "AIzaSyAxXyIbcZAca6n7L93WUZx24GC6Bd31Gmk",
+        authDomain: "mini-project-fc5d1.firebaseapp.com",
+        projectId: "mini-project-fc5d1",
+        storageBucket: "mini-project-fc5d1.appspot.com",
+        messagingSenderId: "921359304072",
+        appId: "1:921359304072:web:1c99607fa7d83f2ecf663d",
+        measurementId: "G-G3NJ0JP4XY"
+
+	  };
+
+	  // Initialize Firebase
+	  const app = initializeApp(firebaseConfig);
+	  const analytics = getAnalytics(app);
+	  const auth = getAuth();
+	  console.log(app);
+
+      document.getElementById("logout").addEventListener("click", function() {
+		  signOut(auth).then(() => {
+			  // Sign-out successful.
+			//   console.log('Sign-out successful.');
+			  alert('Sign-out successful.');
+              window.location.href = "signin.html";
+
+			  document.getElementById('logout').style.display = 'none';
+			}).catch((error) => {
+			  // An error happened.
+			  console.log('An error happened.');
+              alert(error);
+			});		  		  
+	  });
+    //   onAuthStateChanged(auth, (user)=>{ 
+
+    //     if(user) {
+    //         console.log(user);
+    //     window.location.href = "home.html";
+    //     } else {
+    //         console.log(user);
+    //     window.location.href = "signin.html";
+    //     }
+
+    //     });
+      </script>
+
+
+
+
+
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Computer Society of India, GITAM Student Branch.">
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<title>ITUM Sports</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<!-- <script src="logout.js" type="module"> </script> -->
+	<!-- <script src="redirect.js" type="module"></script> -->
+	<link href="events.css" rel="stylesheet">
+</head>
+
+<body  style="background-color: rgba(202, 205, 208, 0.723);">
+	<header>
+		<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+			<a class="navbar-brand" href="home.html">
+				<img src="img/MicrosoftTeams-image (1).png" width="90" height="40" class="d-inline-block align-top" alt="ITUM Logo"> <span class="logo-title"></span> </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="home.html">Home </a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="events.html">Events<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="gallery.html">Gallery</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" style="cursor: pointer;">Team</a>
+							<div class="dropdown-menu" style="margin-left: 330px; margin-top: -10px;">
+							  <a class="dropdown-item" href="football_team.html">Football</a>
+							  <a class="dropdown-item" href="netball_team.html">Netball</a>
+							  <a class="dropdown-item" href="volleyball_team.html">Volleyball</a>
+							</div>
+						  </li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="schedule.html">Schedule</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav ml-auto social-icons" style="left: 1150px;top: 8px;">
+						<li>
+							<a href="https://www.facebook.com/NationalDiplomainTechnology/" target="_blank" class="nav-link"><i class="fa fa-facebook fa-lg"></i></a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/itum.mrt.ac.lk/?hl=en" target="_blank" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/@NDTVOICE" target="_blank" class="nav-link"><i class="fa fa-youtube fa-lg"></i></a>
+						</li>
+						<li >
+							<div class="logoutdiv" style="display:flex; margin-left: 20px;margin-top: 8px; ">
+								<a href="#" id="logout" class="logoutbtn" style="text-decoration: none;">Log Out</a>
+							</div>
+						</li>
+			   
+						</div>
+						
+							
+					</ul>
+				</div>
+			</nav>
+	</header>
+	<div role="main">
+		<div class="jumbotron j-events" style="background-color: rgba(192, 149, 20, 0.371);">
+			<div class="container" >
+				<h1 class="display-3"  style="margin-top: 40px; font-weight:550;">Events</h1>
+				
+			</div>
+		</div>
+		<hr class="featurette-divider" style="border-width: 30px;background-color: rgba(109, 83, 5, 0.652);">
+		<!-- <h2 class="text-center"><em>&middot; This Academic Year &middot;</em></h2> -->
+		<hr class="featurette-divider" style="border-width: 20px;background-color: rgba(52, 40, 4, 0.682);">
+		<div class="container marketing">
+			<div class="row">
+				
+				
+			</div>
+		</div>
+		<!-- <hr class="featurette-divider"> -->
+		<br>
+        <br>
+        <!-- <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br> -->
+        <!-- <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br> -->
+       
+		<div class="container marketing">
+			<div class="row">
+				<div class="col-lg-5 offset-lg-1">
+					<img src="img/news2.jpg" style="height: 300px; width: 400px;"img-fluid">
+				</div>
+				<div class="col-lg-5">
+					<h2>Slug 2023<br><span class="text-muted">Sri Lanka University Games
+						(SLUG | 2023)
+						on 8th July to 8th September</span></h2>
+					<p>Inter-University sports championships have been organized since the 1950s. The first Sri Lanka University Games (SLUG) was held in 1980 at the University of Peradeniya. The goal of SLUG is to place sports and physical education at the service of the harmonious development of Sri Lankan universities, with a view to promoting a peaceful society concerned with the preservation of human dignity. It covers 16 state universities of Sri Lanka comes under the purview of the University Grants Commission. Over 6,000 players will participate in 24 games including 40 events for men and women.
+
+						The SLUG is a highly anticipated event held every three years in rotation among Sri Lankan State Universities, bringing together athletes from all over the country. Hosting this event is a unique opportunity for our university and the entire Island to promote sports development and a peaceful society. The Eastern University, Sri Lanka takes pride in hosting the distinguished 14th Sri Lanka University Games (SLUG). 
+						
+					  </p>
+					<p><strong>Participation:</strong> 4000+ students</p>
+					<p>
+						<a class="btn btn-success" href="https://www.esn.ac.lk/slug23" target="_blank" role="button">Visit website &raquo;</a>
+						
+					</p>
+				</div>
+			</div>
+		</div>
+		<hr class="featurette-divider1">
+		<div class="container marketing">
+			<div class="row">
+				<div class="col-lg-5 offset-lg-1">
+					<img src="img/news3.jpg" class="img-fluid"  style="height:280px">
+				</div>
+				<div class="col-lg-5">
+					<h2>ITUM Staff <br><span class="text-muted">The ITUM Staff Team achieved remarkable success in the University of Moratuwa International Shuttler's Fest</span></h2>
+					<p>23rd to 25<sup>th</sup> The ITUM Staff Team achieved remarkable success in the University of Moratuwa International Shuttler's Fest (UMiSF 2023), under the Inter-University Staff Category, The following staff members made notable accomplishments:.
+					<br><br>Runner-up in Men's Singles: Mr. WLS Maduranga.<br>
+					Second runners-up in Men's Doubles: Mr. WLS Maduranga and Mr. YUD Wijesinghe.<br>
+					Second runners-up in Women's Singles: Mrs. LP Kumarasiri.<br>
+					Second runners-up in Men's Singles: Mr. YUD Wijesinghe.<br><br>Overall, the ITUM Staff Team won a total of five medals in the tournament, showcasing their exceptional skills and dedication to the sport.</p>
+					
+					<a class="btn btn-success" href="https://itum.mrt.ac.lk/node/1028" target="_blank" role="button">Visit website &raquo;</a>
+					</p>
+				</div>
+			</div>
+			<hr class="featurette-divider1">
+			<div class="row">
+				<div class="col-lg-5 offset-lg-1">
+					<h2>One-Day Workshop <br><span class="text-muted">ITUM Base ball Club</span></h2>
+					<p>31<sup>st</sup> March, 2022 at the National Baseball Stadium, Diyagama.According to a concept of Director of ITUM Major General (Retired) S.K. Thirunavukarasu RSP VSV USP, an introductory baseball coaching camp was organized by ITUM Sports and Physical education unit in collaboration with the SL Army Baseball team.
+
+						Basic Introduction on Baseball was given by National Baseball Coach Mr. Iresh Kosala, and Army Baseball captain Sergeant Dissanayake gave their fullest corporation in conducting practical sessions with his team.
+						
+						At the end of the program, as expected, the hidden talents of ITUM students were discovered. Besides that, new friendships were formed between ITUM and SL Army baseball teams as a result of this program.</p>
+					<p><strong>Participation:</strong> 70+ students</p>
+					<p>
+						<a class="btn btn-success" href="https://itum.mrt.ac.lk/node/915" target="_blank" role="button">View details &raquo;</a>
+					</p>
+				</div>
+				<div class="col-lg-5">
+					<img src="img/baseball.png" class="img-fluid" style="height: 300px; width: 700px;">
+				</div>
+			</div>
+			<hr class="featurette-divider1" >
+			<div class="container marketing">
+			<div class="row">
+				<div class="col-lg-5">
+					<img src="img/badmin.png" class="img-fluid" style="height: 200px; width: 700px;">
+				</div>
+				<div class="col-lg-7">
+					<h2>ITUM <span class="text-muted">Staff Badminton tournament</span></h2>
+					<p>"IT'S Bad To" (ITUM Staff Badminton Tournament) 2022 organized by the Staff Welfare Society was successfully held on the 16th of February 2022 at the indoor stadium of ITUM. As the honored chief guests of the event, Mr. Sachin Dias and Ms. Thilini Hendahewa, the badminton mixed double champions of Sri Lanka, who made our country proud and victorious by winning the gold medal in badminton mixed double at ODISHA Open 2022 recently held in India took part to witness the badminton skills of the ITUM staff. More than 30 staff members participated as contestants in the tournament, and everyone enjoyed the event to the maximum. With the support of two referees from UOM, Mr. Lakmal & Mr. Pavithra the contestants were randomly divided into 4 teams with 7-8 participants for each team. Opponent teams had to play five matches including one women's double, two men's doubles, and two mixed doubles matches. The director of the institute also participated as a contestant, and they were able to secure the championship under the great leadership of Mr. Kajaharan. Mr. Amjath and his team became the 1st runners-up while Mr. Sanjaya and his team became the 2nd runners-up. No matter what, as we expected at the end of the day everyone won because everyone enjoyed the event, the hidden talents were discovered, and new friendships were developed among the staff of the ITUM. </p>
+					<p><strong>Participation:</strong> 40+ staff Members</p>
+				</div>
+			</div>
+			</div>
+			<hr class="featurette-divider2" >
+			<h2 class="text-center" style="font-size: 50px;"><em>&middot; Previously &middot;</em></h2>
+			<hr class="featurette-divider2">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<h2> Guidance and Future Studies</h2>
+					<p>Inter-University sports championships have been organized since the 1950s. The first Sri Lanka University Games (SLUG) was held in 1980 at the University of Peradeniya. The goal of SLUG is to place sports and physical education at the service of the harmonious development of Sri Lankan universities, with a view to promoting a peaceful society concerned with the preservation of human dignity. It covers 16 state universities of Sri Lanka comes under the purview of the University Grants Commission. Over 6,000 players will participate in 24 games including 40 events for men and women.</p>
+					<p><strong>Participation:</strong> 100+ students</p>
+				</div>
+			</div>
+			<hr class="featurette-divider1">
+			<div class="row">
+				<div class="col-lg-5 offset-lg-1">
+					<h2>ITUM</h2>
+					<p>TInter-University sports championships have been organized since the 1950s. The first Sri Lanka University Games (SLUG) was held in 1980 at the University of Peradeniya. The goal of SLUG is to place sports and physical education at the service of the harmonious development of Sri Lankan universities, with a view to promoting a peaceful society concerned with the preservation of human dignity. It covers 16 state universities of Sri Lanka comes under the purview of the University Grants Commission. Over 6,000 players will participate in 24 games including 40 events for men and women.</p>
+					<p><strong>Participation:</strong> 80+ students</p>
+				</div>
+				<div class="col-lg-5">
+					<img src="img/352720719_1064378041190268_2538416748461056186_n.jpg" class="img-fluid">
+				</div>
+			</div>
+			<hr class="featurette-divider1">
+			<div class="row">
+				<div class="col-lg-5 offset-lg-1">
+					<img src="img/352720719_1064378041190268_2538416748461056186_n.jpg" class="img-fluid">
+				</div>
+				<div class="col-lg-5">
+					<h2>asani 2K19 <span class="text-muted">Annual Fest</span></h2>
+					<p></p>
+					<p><strong>Participation:</strong> 400+ students</p>
+					<p>
+						<a class="btn btn-success" href="assets/report/Ethereal.pdf" target="_blank" role="button">View details &raquo;</a>
+						
+					</p>
+				</div>
+			</div>
+			<hr class="featurette-divider1">
+			<div class="row">
+				<div class="col-lg-5 offset-lg-1">
+					<h2>ITUM <span class="text-muted">UOM</span></h2>
+					<p>Inter-University sports championships have been organized since the 1950s. The first Sri Lanka University Games (SLUG) was held in 1980 at the University of Peradeniya. The goal of SLUG is to place sports and physical education at the service of the harmonious development of Sri Lankan universities, with a view to promoting a peaceful society concerned with the preservation of human dignity. It covers 16 state universities of Sri Lanka comes under the purview of the University Grants Commission. Over 6,000 players will participate in 24 games including 40 events for men and women.</p>
+					<p><strong>Participation:</strong> 200+ students</p>
+				</div>
+				<div class="col-lg-5">
+					<img src="352720719_1064378041190268_2538416748461056186_n.jpg" class="img-fluid">
+				</div>
+			</div>
+			<hr class="featurette-divider1">
+			<div class="row">
+				<div class="col-lg-5 offset-lg-1">
+					<img src="img/352720719_1064378041190268_2538416748461056186_n.jpg" class="img-fluid">
+				</div>
+				<div class="col-lg-5">
+					<h2>ITUM</h2>
+					<p>Inter-University sports championships have been organized since the 1950s. The first Sri Lanka University Games (SLUG) was held in 1980 at the University of Peradeniya. The goal of SLUG is to place sports and physical education at the service of the harmonious development of Sri Lankan universities, with a view to promoting a peaceful society concerned with the preservation of human dignity. It covers 16 state universities of Sri Lanka comes under the purview of the University Grants Commission. Over 6,000 players will participate in 24 games including 40 events for men and women..</p>
+					<p><strong>Participation:</strong> 150+ students</p>
+					<p><a class="btn btn-success" href="assets/report/Seminar on Distributed Computing.pdf" target="_blank" role="button">View details &raquo;</a></p>
+				</div>
+			</div>
+			<hr class="featurette-divider1">
+			<div class="row">
+				<div class="col-lg-5 offset-lg-1">
+					<h2>ITUM<span class="text-muted">&amp;</span> AR</h2>
+					<p>Inter-University sports championships have been organized since the 1950s. The first Sri Lanka University Games (SLUG) was held in 1980 at the University of Peradeniya. The goal of SLUG is to place sports and physical education at the service of the harmonious development of Sri Lankan universities, with a view to promoting a peaceful society concerned with the preservation of human dignity. It covers 16 state universities of Sri Lanka comes under the purview of the University Grants Commission. Over 6,000 players will participate in 24 games including 40 events for men and women.</p>
+					<p><strong>Participation:</strong> 180+ students</p>
+					<p><a class="btn btn-success" href="assets/report/Virtual Reality and Augumented Reality.pdf" target="_blank" role="button">View details &raquo;</a></p>
+				</div>
+				<div class="col-lg-5">
+					<img src="img/2017-11-25 VR AR.png" class="img-fluid">
+				</div>
+			</div>
+			
+			
+			<hr class="featurette-divider">
+			
+		
+	
+			<hr class="featurette-divider">
+			<div class="row featurette">
+				<div class="col-md-12">
+					<h2 class="featurette-heading">Got some questions? <span class="text-muted">Get in touch.</span></h2>
+					<br>
+					<table class="table table-hover table-borderless">
+						<tbody>
+							<tr>
+							<td>Akila</td>
+							<td>+94 77 966 0273</a></td>
+							</tr>
+							<tr>
+							<td>Shashika</td>
+							<td>+94 77 309 6647</a></td>
+							</tr>
+							<tr>
+							<td>Aditya</td>
+							<td>+94 71 421 9600</a></td>
+							</tr>
+							<tr>
+							<td>Harsha</td>
+							<td>+94 78 529 8809</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<hr class="featurette-divider">
+		</div>
+		<footer class="container">
+			<p> Copyright © ITUM  2022.  All rights Reserved.  <a href="https://itum.mrt.ac.lk/" target="_blank">ITUM</a></p>
+		</footer>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

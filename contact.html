@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="module"> 
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+          import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
+          import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+          
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
+    
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          const firebaseConfig = {
+            apiKey: "AIzaSyAxXyIbcZAca6n7L93WUZx24GC6Bd31Gmk",
+            authDomain: "mini-project-fc5d1.firebaseapp.com",
+            projectId: "mini-project-fc5d1",
+            storageBucket: "mini-project-fc5d1.appspot.com",
+            messagingSenderId: "921359304072",
+            appId: "1:921359304072:web:1c99607fa7d83f2ecf663d",
+            measurementId: "G-G3NJ0JP4XY"
+    
+          };
+    
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          const analytics = getAnalytics(app);
+          const auth = getAuth();
+          console.log(app);
+    
+          document.getElementById("logout").addEventListener("click", function() {
+              signOut(auth).then(() => {
+                  // Sign-out successful.
+                //   console.log('Sign-out successful.');
+                  alert('Sign-out successful.');
+                  window.location.href = "signin.html";
+    
+                  document.getElementById('logout').style.display = 'none';
+                }).catch((error) => {
+                  // An error happened.
+                  console.log('An error happened.');
+                  alert(error);
+                });		  		  
+          });
+        //   onAuthStateChanged(auth, (user)=>{ 
+    
+        //     if(user) {
+        //         console.log(user);
+        //     window.location.href = "home.html";
+        //     } else {
+        //         console.log(user);
+        //     window.location.href = "signin.html";
+        //     }
+    
+        //     });
+          </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Computer Society of India, GITAM Student Branch.">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <title>ITUM Sports</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- <script src="logout.js" type="module"> </script> -->
+    <!-- <script type="module" src="redirect.js" ></script> -->
+    <link href="contact.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <a class="navbar-brand" href="home.html">
+                <img src="img/MicrosoftTeams-image (1).png" width="90" height="40" class="d-inline-block align-top" alt="ITUM Logo"> <span class="logo-title"></span> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" style="cursor: pointer;">Team</a>
+                            <div class="dropdown-menu" style="margin-left: 330px; margin-top: -10px;">
+                              <a class="dropdown-item" href="football_team.html">Football</a>
+                              <a class="dropdown-item" href="netball_team.html">Netball</a>
+                              <a class="dropdown-item" href="volleyball_team.html">Volleyball</a>
+                            </div>
+                          </li>
+                        
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="schedule.html">Schedule</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav ml-auto social-icons" style="left: 1150px;top: 8px;">
+                        <li>
+                            <a href="https://www.facebook.com/NationalDiplomainTechnology/" target="_blank" class="nav-link"><i class="fa fa-facebook fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/itum.mrt.ac.lk/?hl=en" target="_blank" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@NDTVOICE" target="_blank" class="nav-link"><i class="fa fa-youtube fa-lg"></i></a>
+                        </li>
+                        <li >
+                            <div class="logoutdiv" style="display:flex; margin-left: 20px;margin-top: 8px; ">
+                                <a href="#" id="logout" class="logoutbtn" style="text-decoration: none;">Log Out</a>
+                            </div>
+                        </li>
+               
+                        </div>
+                        
+                            
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div role="main">
+            <div class="jumbotron j-contact">
+                <div class="container">
+                    <h1 class="display-3" style="font-weight:550;">Contact Us</h1>
+                    <p>Do you have any interesting ideas you'd like to share? Got a plan to execute a project or an event? Get it to ITUM Sports, we will make it happen.
+                        <br> Any queries? Reach out to us!</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h2>For enquries,</h2>
+                            <p></p>
+                            <p>Email us at :- <p><a href="mail.itum.mrt.ac.lk">mail.itum.mrt.ac.lk</a></p></p>
+                            <p><a class="btn btn-lg btn-primary" href="https://www.facebook.com/NationalDiplomainTechnology/" target="_blank" role="button">Connect on Facebook &raquo;</a></p>
+                        </div>
+                        <div class="col-lg-8 g-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.6815248436887!2d79.99025921532589!3d6.808539221671511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24e1a4acef3e7%3A0xb2ef9c84206274fc!2sInstitute%20of%20Technology%2C%20University%20of%20Moratuwa!5e0!3m2!1sen!2slk!4v1640584019991!5m2!1sen!2slk" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <hr class="featurette-divider">
+                    <div class="row featurette">
+                        <div class="col-md-12">
+                            <h2 class="featurette-heading">Got some questions? <span class="text-muted">Get in touch.</span></h2>
+                            <br>
+                            <table class="table table-hover table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td>Ajith</td>
+                                        <td><a href="tel:+947569838827">+94 7569838827</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Krishantha</td>
+                                        <td><a href="tel:+949390465129">+94 9390465129</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manori</td>
+                                        <td><a href="tel:+949121916916">+94 9121916916</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jayantha</td>
+                                        <td><a href="tel:+949398539651">+94 9398539651</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <hr class="featurette-divider">
+                </div>
+                <footer class="container">
+                    <p> Copyright © ITUM  2022.  All rights Reserved.  <a href="https://itum.mrt.ac.lk/" target="_blank">ITUM</a></p>
+                </footer>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        </body>
+        
+        </html>
